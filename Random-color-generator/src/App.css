@@ -1,0 +1,50 @@
+#root {
+  max-width: 1280px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  place-items: center;
+  justify-content: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+}
+
+header button {
+  color: white;
+  background: #37891b;
+  padding: 12px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 12px 0;
+  box-shadow: 6px 6px 3px rgba(29, 122, 155, 0.5);
+  cursor: pointer;
+}
+
+main {
+  line-height: 2;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+  height: 60%;
+  margin: 120px auto;
+  font-size: 2.5rem;
+}
+
+
+
+
