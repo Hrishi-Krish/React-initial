@@ -11,9 +11,11 @@ export default function TicTacToe() {
   const [winner, setWinner] = useState("O")
 
   const toggle = (e, num) => {
-    if (lock) return 0;
+    if (lock) return;
 
-    if (count%2==0) {
+    if (data[num] != "") return;
+
+    if (count % 2 == 0) {
       e.target.innerHTML = `<img src = ${circle_icon} alt="circle.png" />`
       data[num] = 'O'
     }
@@ -26,8 +28,8 @@ export default function TicTacToe() {
   }
 
   const checkWin = () => {
-    for (let i=0;i<7;i+=3)
-      if(data[i] === data[i+1] && data[i+1] === data[i+2] && data[i+2] != "")
+    for (let i = 0; i < 7; i += 3)
+      if (data[i] === data[i + 1] && data[i + 1] === data[i + 2] && data[i + 2] != "")
         win(data[i])
 
     for (let i = 0; i < 3; i++)
@@ -53,16 +55,16 @@ export default function TicTacToe() {
   return (
     <div className="container">
       {
-        lock ? 
-        <h1 className="title">Winner Player 
-        <span className={winner === "X" ? "gold" : "blue"}>{winner}</span></h1> :
-        <h1 className="title">Tic Tac Toe </h1>
+        lock ?
+          <h1 className="title">Winner - Player
+            <span className={winner === "X" ? "gold" : "blue"}>{winner}</span></h1> :
+          <h1 className="title">Tic Tac Toe </h1>
       }
-      
+
 
       <div className="board">
         <div className="row1">
-          <div className="boxes" onClick={(e) => {toggle(e,0)}}></div>
+          <div className="boxes" onClick={(e) => { toggle(e, 0) }}></div>
           <div className="boxes" onClick={(e) => { toggle(e, 1) }}></div>
           <div className="boxes" onClick={(e) => { toggle(e, 2) }}></div>
         </div>
